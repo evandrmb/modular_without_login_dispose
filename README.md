@@ -1,4 +1,4 @@
-# Modular don't do dispose of LoginModule
+# Modular don't dispose LoginModule
 
 Repository created to reproduce a problem with flutter_modular.
 
