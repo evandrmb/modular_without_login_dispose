@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_modular_codegen/app/modules/login/login_controller.dart';
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -16,7 +15,7 @@ class SignUpPage extends StatelessWidget {
           onPressed: () {
             Modular.to.pushReplacementNamed('/home');
           },
-          child: Text('Navega para home e não faz dispose do LoginModule'),
+          child: Text('Navigate to home won\'t do dispose in LoginModule'),
         ),
       ),
     );

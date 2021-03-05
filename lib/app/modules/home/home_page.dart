@@ -24,7 +24,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             onPressed: () {
               controller.logout();
             },
-            child: Text('Deslogar')),
+            child: Text('Logout')),
       ),
     );
   }

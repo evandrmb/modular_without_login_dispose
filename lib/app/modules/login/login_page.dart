@@ -21,31 +21,35 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Spacer(
-              flex: 2,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Modular.to.pushReplacementNamed('/home');
-              },
-              child: Text('Faz dispose no LoginModule'),
-            ),
-            Spacer(),
-            ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red)),
-              onPressed: () {
-                Modular.link.pushNamed('/signup');
-              },
-              child: Text('Não faz dispose no LoginModule'),
-            ),
-            Spacer(
-              flex: 2,
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Spacer(
+                flex: 2,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Modular.to.pushReplacementNamed('/home');
+                },
+                child: Text('Will do dispose in LoginModule'),
+              ),
+              Spacer(),
+              ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.red)),
+                onPressed: () {
+                  Modular.link.pushNamed('/signup');
+                },
+                child: Text(
+                    'Navigate inside LoginModule and won\'t do dispose in LoginModule'),
+              ),
+              Spacer(
+                flex: 2,
+              ),
+            ],
+          ),
         ),
       ),
     );
