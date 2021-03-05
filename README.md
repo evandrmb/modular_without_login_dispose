@@ -1,16 +1,15 @@
-# teste_modular_codegen
+# Modular don't do dispose of LoginModule
 
-A new Flutter project. Created by Slidy
+Repository created to reproduce a problem with flutter_modular.
 
-## Getting Started
+## Navigating like this works:
 
-This project is a starting point for a Flutter application.
+from SplashModule do Modular.to.pushReplacementNamed('/login');
+from LoginModule do Modular.to.pushReplacementNamed('/home');
 
-A few resources to get you started if this is your first Flutter project:
+## This doesn't work
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+from SplashModule do Modular.to.pushReplacementNamed('/login');
+from LoginModule do Modular.link.pushNamed('/signup');
+from LoginModule do Modular.to.pushReplacementNamed('/home');
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
