@@ -5,8 +5,8 @@ part 'splash_controller.g.dart';
 class SplashController = _SplashControllerBase with _$SplashController;
 
 abstract class _SplashControllerBase with Store {
-  _SplashControllerBase() {
-    Future.delayed(Duration(seconds: 1), () {
+  void navigateToLogin() {
+    Future.delayed(Duration(seconds: 2), () {
       Modular.to.pushReplacementNamed('/login');
     });
   }

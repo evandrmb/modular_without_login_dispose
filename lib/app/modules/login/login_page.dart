@@ -12,8 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends ModularState<LoginPage, LoginController> {
-  //use 'controller' variable to access controller
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +38,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.red)),
                 onPressed: () {
-                  Modular.link.pushNamed('/signup');
+                  Modular.to.pushNamed('/signup');
                 },
                 child: Text(
                     'Navigate inside LoginModule and won\'t do dispose in LoginModule'),

@@ -6,19 +6,14 @@ import '../app/modules/login/login_module.dart';
 
 import 'modules/splash/splash_module.dart';
 
-class AppModule extends MainModule {
+class AppModule extends Module {
   @override
   List<Bind> get binds => [];
 
   @override
-  List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, module: SplashModule()),
-        ModularRouter('/home', module: HomeModule()),
-        ModularRouter('/login', module: LoginModule()),
+  List<ModularRoute> get routes => [
+        ModuleRoute(Modular.initialRoute, module: SplashModule()),
+        ModuleRoute('/login', module: LoginModule()),
+        ModuleRoute('/home', module: HomeModule()),
       ];
-
-  @override
-  Widget get bootstrap => AppWidget();
-
-  static Inject get to => Inject<AppModule>.of();
 }

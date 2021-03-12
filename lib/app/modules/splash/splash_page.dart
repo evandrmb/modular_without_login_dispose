@@ -11,7 +11,12 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends ModularState<SplashPage, SplashController> {
-  //use 'controller' variable to access controller
+  @override
+  void initState() {
+    super.initState();
+
+    store.navigateToLogin();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +24,8 @@ class _SplashPageState extends ModularState<SplashPage, SplashController> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[],
+      body: const Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }
