@@ -22,7 +22,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              controller.logout();
+              store.logout();
             },
             child: Text('Logout')),
       ),

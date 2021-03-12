@@ -34,6 +34,10 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 child: Text('Will do dispose in LoginModule'),
               ),
               Spacer(),
+
+              /// ! If we don't pass /login before /signup here
+              /// ! it will have a Unhandled Exception: ModularError: Route '/signup' not found
+              /// ! But it works if instead of /signup we use only signup
               ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.red)),
