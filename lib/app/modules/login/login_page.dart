@@ -37,13 +37,18 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
               ),
               Spacer(),
               ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.red)),
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
                 onPressed: () {
-                  Modular.link.pushNamed('/signup');
+                  Modular.to.navigate('signup');
                 },
-                child: Text(
-                    'Navigate inside LoginModule and won\'t do dispose in LoginModule'),
+                child: Text('Navigate inside LoginModule and do dispose in LoginModule'),
+              ),
+              Spacer(),
+              ElevatedButton(
+                onPressed: () {
+                  Modular.to.pushNamed('/other');
+                },
+                child: Text('Other Module'),
               ),
               Spacer(
                 flex: 2,

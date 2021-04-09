@@ -1,12 +1,16 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-@Injectable()
-class LoginController {
-  // irParaSignUp() async {
-  //   Modular.link.pushNamed('/signup');
-  // }
+class LoginController extends Disposable {
+  TextEditingController textEditingController;
 
-  // signUp() {
-  //   Modular.to.pushReplacementNamed('/home');
-  // }
+  LoginController() {
+    textEditingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    print('[DISPOSE] Login Controller');
+    textEditingController.dispose();
+  }
 }
