@@ -10,9 +10,9 @@ class SignUpPage extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.red)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
           onPressed: () {
+            Modular.to.popUntil((r) => r.isFirst);
             Modular.to.pushReplacementNamed('/home');
           },
           child: Text('Navigate to home won\'t do dispose in LoginModule'),
